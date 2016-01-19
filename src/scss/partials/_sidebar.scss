@@ -1,0 +1,32 @@
+.sidebar {
+	order: 1;
+	width: 10vw;
+	margin: 0 5px 10px 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	// overflow: hidden;
+	// justify-content: flex-start;
+	// align-self: center;
+		//actions
+	form{
+		flex-flow: row wrap;
+		// align-self: center;
+		// justify-content: center;
+	}
+
+	ul{
+		
+		li{
+			list-style: none;
+			line-height: 16px;
+			a{
+				color: green;
+				text-decoration: none;
+			}
+			a:hover{
+				background: grey;
+				color: white;
+			}
+		}
+	}
+}
