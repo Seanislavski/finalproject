@@ -14,14 +14,22 @@
 		}
 	.main{
 		overflow: hidden;
-		// width: 80vw;
-		margin-left: 12vw;
+		width: 100vw;
+		margin-left: 2vw;
 		
 	}
 	body{
 		font-size: 12px;
 	}
-
+	.sidebar{
+		width: 100vw;
+		flex-direction: row;
+		justify-content: space-around; //centers if row
+		// align-items: center; //centers if column
+	}
+	.content{
+		flex-direction: column;
+	}
 }
 @media only screen and (min-width:320px) {
 	}
@@ -53,6 +61,18 @@
 	}
 	body{
 		font-size: 18px;
+	}
+	.sidebar{
+		width: 10vw;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.content{
+		flex-direction: row;
+	}
+	.main{
+		width: 80vw;
 	}
 
 }

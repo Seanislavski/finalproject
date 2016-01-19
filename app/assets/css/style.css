@@ -466,22 +466,13 @@ th {
       -ms-flex-order: 1;
           order: 1;
   width: 10vw;
-  margin: 0 5px 10px 5px;
+  margin: 0 5px 10px 15px;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap; }
-  .sidebar form {
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap; }
+  display: flex; }
   .sidebar ul li {
-    list-style: none;
-    line-height: 16px; }
+    list-style: none; }
     .sidebar ul li a {
-      color: green;
       text-decoration: none; }
     .sidebar ul li a:hover {
       background: grey;
@@ -507,7 +498,7 @@ th {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 0 10px 0 0; }
+  padding: 0 15px 15px 0; }
   .footer a {
     text-decoration: none; }
 
@@ -547,9 +538,22 @@ th {
     font-size: 30px; }
   .main {
     overflow: hidden;
-    margin-left: 12vw; }
+    width: 100vw;
+    margin-left: 2vw; }
   body {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .sidebar {
+    width: 100vw;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  .content {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; } }
 
 @media only screen and (min-width: 480px) {
   .nav {
@@ -567,7 +571,25 @@ th {
   .header h1 {
     font-size: 50px; }
   body {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .sidebar {
+    width: 10vw;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .content {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .main {
+    width: 80vw; } }
 
 @media print {
   * {
