@@ -406,7 +406,7 @@ th {
       -ms-flex-align: center;
           align-items: center; }
   .header h1 {
-    font-size: 60px; }
+    margin: 15px 0 0 0; }
 
 .logo {
   margin: -58px 0 0 -100px;
@@ -479,16 +479,33 @@ th {
       color: white; }
 
 .main {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
-  width: 90vw;
-  padding: 0 10px 10px 10px; }
+  width: 100vw;
+  padding: 0 10px 10px 10px;
+  margin: 0; }
 
 .content {
   -webkit-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1;
+  padding: 0;
+  margin: 0; }
+
+.new {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: green;
+  margin: 0;
+  padding: 0; }
 
 .footer {
   -webkit-order: 6;

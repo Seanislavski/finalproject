@@ -22,13 +22,12 @@
 
 // });
 
-var spoon = $('.main');
-var poon = spoon.html();
-console.log(poon);
-$(document).ready(function(){
+var mainArea = $('.main');
+var defaultContent = mainArea.html();
 
+$(document).ready(function(){
                  $('#home').click(function(){
-                     $('.main').html(poon);
+                     $('.main').html(defaultContent);
                  });
 });
 $(document).ready(function(){
