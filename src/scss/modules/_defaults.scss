@@ -5,7 +5,7 @@
 }
 html {
   font-size: 62.5%;
-  background: radial-gradient(ellipse at center, $base 0, $darken 80%, $back 100%);
+  // background: radial-gradient(ellipse at center, $base 0, $darken 80%, $back 100%);
 }
 body {
   font: 300 15px/1.6 'Gentium Book Basic', Helvetica, Arial;
@@ -13,8 +13,10 @@ body {
   transition: all .4s .3s ease-in;
   display: flex;
   flex-flow: column wrap;
+  background-image: url('http://cdn.morguefile.com/imageData/public/files/a/5demayo/10/l/1412232147y7ajl.jpg');
+  // background-attachment: fixed;
 }
 body,html{
 	min-height: 100vh;
-	overflow: hidden;
+	// overflow: hidden;
 }

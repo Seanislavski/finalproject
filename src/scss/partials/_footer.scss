@@ -1,10 +1,15 @@
 .footer {
 	order: 6;
-	height: 5vh;
+	// height: 5vh;
 	justify-content: flex-end;
+	background: rgba(0, 0, 0, .7);
 	padding: 0 15px 15px 0; 
+	
+	color: $maintext;
 
 	a{
 		text-decoration: none;
+		color: $maintext;
 	}
+	
 }

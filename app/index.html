@@ -68,17 +68,24 @@
     <section class="content">
 
     <main class="main" role="main">
-
+      <section class="header">
+        <h2>Organize those things!</h2>
+      </section>
       <p>Bookshelves are tricky to keep organized, so this is a tool where you can put your books on the virtual shelf, organize them, enter information about them, and mark if you are reading a book or have lent it to someone. </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores non animi odio ullam quos dolores aliquid, facere, illo, id neque suscipit totam accusamus fugit qui, nostrum maxime eaque doloribus.</p>
+      <section class="header" id="searchHead">
+        <h2>Search Results</h2>
+      </section>
+      <section class="searchResults" id="searchResults">
+      </section>
+      
     </main>
 
     <div class="sidebar" role="complementary">
 
-      <form>
-        <input type="text" size="10">
-        <button type="submit">New Book</button>
-
+      <form id="search">
+        <input type="text" size="13" id="searchInput">
+        <br>
+        <button type="submit" id="newBook">Search</button>
       </form>
 
     </div>
@@ -93,7 +100,9 @@
 
     <script src="assets/components/jquery/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/scripts.min.js"></script>
 
+    <script src="assets/js/scripts.min.js"></script>
+    <span id="putScript"></span>
+    
   </body>
 </html>

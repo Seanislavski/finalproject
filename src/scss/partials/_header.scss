@@ -9,20 +9,14 @@
 		// padding: 0;
 		margin: 15px 0 0 0;
 	}
-
-	
-
 }
-.logo {
-  margin: -58px 0 0 -100px;
-  @include position(absolute, 50% 0 0 50%);
-  img {
 
-  }
-}
 .title{
 	padding: 0;
+	padding-left: 15px;
+	padding-right: 15px;
 	margin: 0;
+	border-radius: $headBordRad;
 	svg{
 		height: 30px;
 		width: 30px;
@@ -30,4 +24,11 @@
 		display: inline-flex;
 		flex-flow: row wrap;
 	}
+	background: rgba(0, 0, 0, .7);
+	color: $maintext;
+	text-shadow: 2px 2px #6F6F6F;
+}
+
+#searchHead{
+	padding: 10px;
 }
