@@ -41,29 +41,25 @@ $(document).ready(function(){
                  });
 });
 
+var numBooks;
+var books = $('.books');
 function handleResponse(response) {
+    $('#searchResults').html(''); //clear area
     for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         var results = item.volumeInfo; 
-        // in production code, item.text should have the HTML entities escaped.
-        // var main = document.getElementsByClassName('searchResults')[0]
-        var main = $('.searchResults')[0];
-        //main.innerHTML += '<br>' + results.title + ' by ' + results.authors;
+        // var main = $('.searchResults')[0];
         var bookStop = "<div class='books' id='book" + i + "'></div>";
         $('#searchResults').append(bookStop);
-
-            //^ append makes sure that multiple searches means more divs with the same ID
-            // if use html() instead it only allows one 'book'
-
-        $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<p>Description: ' + results.description + '</p>');
-       
+        $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<span class="bookContent"><p>Description: ' + results.description + '</p><img src="' + results.imageLinks.thumbnail + '"></img>&nbsp;</span><span class="addToLibrary"><button id="btn' + i + '">Add To Library</button></span>');
    } //end for statement
+   // numBooks = books.length;
 }  //query API and put in #main
 
-//get form to work
-var newBook = $('#newBook'); //button
+//
+var newBook = $('#newBook'); //Search button
 
-var searchForm = $('search'); //form
+var searchForm = $('search'); //Search form
 
 newBook.click(function(event){
     event.preventDefault();
@@ -77,11 +73,17 @@ newBook.click(function(event){
 
     $('#putScript').html(scrInject);
 
-    console.log(queryId);
+    // console.log(queryId);
     // console.log(scrInject);
 
 }); //button press
 
-// function searchHard(){
-//     console.log("ok");
-// }
+
+
+
+var addToLibrary = $('.addToLibrary');
+var addToButton = $('Hello');
+// var addIfClicked = ('btn' + numBooks);
+// addIfClicked.click(function(event){
+//     event.preventDefault();
+// });

@@ -3,15 +3,9 @@
 	flex-direction: column;
 	order: 2;
 	width: 100vw;
-	// padding: 0 10px 10px 10px;
-	// padding: 15px;
-	// border: 10px double orange;
 	margin: 1px;
-	// border-top-left-radius: 50%;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
-	// border-top-right-radius: 50%;
-	// background: #3C3C3C;
 	background: $blackBack;
 	// box-shadow: -20px -10px rgba(10, 10, 10, .7); //#6E6E6E;
 	color: $maintext;
@@ -25,42 +19,73 @@
 
 .new{
 	flex-direction: column;
-	// width: 100vw;
-	// height: 100vh;
-	// background: green;
-	// border: 5px double red;
 	margin: 0;
 	padding: 0;
 }
 
 .books{
-	// height: 100vh; 
-	// width: 20vw;
-	// justify-content: flex-start;
-	border: 1px solid red;
-	margin:after  5vw;
 	flex-flow: column nowrap;
 	overflow: hidden;
+	background: $btnhov;
+	color: black;
+	// align-items: flex-end;
+	margin-bottom: 20px; // space between rows of books
+	p{
+		height: 120px; // in order to put the button on the bottom - error when title is 2 lines, bumps
+		flex-grow: 0;
+		
+	}
+	img{
+		justify-content: space-around;
+		height: 100px;
+		width: 70px;
+	}
+	a{
+			color: white;
+			align-self: flex-end;
+			padding-top: 0;
+			justify-content: center;
+		}
 }
 
 .searchResults{
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-	align-items: baseline;
-	// align-items: flex-start;
 
-	div{
+	div{ //book
 		display: flex;
 		padding: 15px;
 		padding-top: 0;
-		border: 3px double blue;
-		h3{
+		border-radius: 5px;
+
+		h3{ //title
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
-			border: 3px double blue;
-			-webkit-margin-after: 0;
+			border: 5px double white;
+			color: black;
+			background: $bookTitleBack;
+			border-radius: 10px;
+			// -webkit-margin-after: 0;
 		}
 	}
+	// button{
+	// 	bottom: 0;
+	// }
+}
+
+.addToLibrary{ //button area
+	display: flex;
+	// height: 20px;
+	// position: fixed;
+	justify-content: space-around;
+	color: black;
+	button{
+		border: none;
+	}
+}
+
+.bookContent{
+	justify-content: space-around;
 }

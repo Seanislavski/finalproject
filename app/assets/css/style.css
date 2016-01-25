@@ -515,12 +515,33 @@ th {
   padding: 0; }
 
 .books {
-  border: 1px solid red;
-  margin: after  5vw;
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #205C5A;
+  color: black;
+  margin-bottom: 20px; }
+  .books p {
+    height: 120px;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; }
+  .books img {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    height: 100px;
+    width: 70px; }
+  .books a {
+    color: white;
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+    padding-top: 0;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
 
 .searchResults {
   display: -webkit-flex;
@@ -531,17 +552,14 @@ th {
           flex-flow: row wrap;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
-          justify-content: space-around;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline; }
+          justify-content: space-around; }
   .searchResults div {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     padding: 15px;
     padding-top: 0;
-    border: 3px double blue; }
+    border-radius: 5px; }
     .searchResults div h3 {
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -552,8 +570,26 @@ th {
       -webkit-justify-content: space-around;
           -ms-flex-pack: distribute;
               justify-content: space-around;
-      border: 3px double blue;
-      -webkit-margin-after: 0; }
+      border: 5px double white;
+      color: black;
+      background: #EBD6B3;
+      border-radius: 10px; }
+
+.addToLibrary {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  color: black; }
+  .addToLibrary button {
+    border: none; }
+
+.bookContent {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
 
 .footer {
   -webkit-order: 6;
