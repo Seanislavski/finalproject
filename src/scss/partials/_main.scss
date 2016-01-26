@@ -24,6 +24,7 @@
 }
 
 .books{
+	display: flex;
 	flex-flow: column nowrap;
 	overflow: hidden;
 	background: $btnhov;
@@ -33,12 +34,14 @@
 	p{
 		height: 120px; // in order to put the button on the bottom - error when title is 2 lines, bumps
 		flex-grow: 0;
-		
+
 	}
 	img{
-		justify-content: space-around;
-		height: 100px;
-		width: 70px;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		height: 100vh;
+		margin-top: 10px;
 	}
 	a{
 			color: white;
