@@ -47,7 +47,7 @@ function handleResponse(response) {
     $('#searchResults').html(''); //clear area
     for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
-        var results = item.volumeInfo; 
+        var results = item.volumeInfo;
         // var main = $('.searchResults')[0];
         var bookStop = "<div class='books' id='book" + i + "'></div>";
         $('#searchResults').append(bookStop);
@@ -63,8 +63,8 @@ var searchForm = $('search'); //Search form
 
 newBook.click(function(event){
     event.preventDefault();
-    var queryId = searchInput.value; //text field    
-    
+    var queryId = searchInput.value; //text field
+
     // console.log(typeof queryId);
     var results = ('"https://www.googleapis.com/books/v1/volumes?q=' + queryId + '&callback=handleResponse"');
     var scrInject = ('<script src=' + results + '></script>');
