@@ -61,23 +61,26 @@ function handleResponse(response) {
         $('#searchResults').append(bookStop);
         $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<span class="bookContent"><p>Description: ' + results.description + '</p><img src="' + results.imageLinks.thumbnail + '"></img>&nbsp;</span><span class="addToLibrary"><button id="btn' + i + '">Add To Library</button></span>');
    } //end for statement
-   // numBooks = books.length;
+   numBooks = books.length;
 }  //query API and put in #main
 
 //
 var newBook = $('#newBook'); //Search button
 
-var searchForm = $('search'); //Search form
+// var searchForm = $('search'); //Search form
 
 newBook.click(function(event){
     event.preventDefault();
+
+    // var searchInput = $('#searchInput');
     var queryId = searchInput.value; //text field
+
 
     // console.log(typeof queryId);
     var results = ('"https://www.googleapis.com/books/v1/volumes?q=' + queryId + '&callback=handleResponse"');
     var scrInject = ('<script src=' + results + '></script>');
 
-    var putScript = $('#putScript');
+    // var putScript = $('#putScript');
 
     $('#putScript').html(scrInject);
 
@@ -89,9 +92,11 @@ newBook.click(function(event){
 
 
 
-var addToLibrary = $('.addToLibrary');
-var addToButton = $('Hello');
-// var addIfClicked = ('btn' + numBooks);
-// addIfClicked.click(function(event){
-//     event.preventDefault();
-// });
+// var addToLibrary = $('.addToLibrary');
+// var addToButton = $('Hello');
+
+var addIfClicked = ('#btn' + numBooks);
+addIfClicked.click(function(event){
+    event.preventDefault();
+
+});
