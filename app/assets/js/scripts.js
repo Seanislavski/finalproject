@@ -63,8 +63,7 @@ function handleResponse(response) {
     for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         var results = item.volumeInfo;
-        // var main = $('.searchResults')[0];
-        var bookStop = "<div class='books' id='book" + i + "'></div>";
+        var bookStop = "<div class='flipper'><div class='books front' id='book" + i + "'></div><div class='books back' id='book" + i + "'></div></div>";
         $('#searchResults').append(bookStop);
         console.log(results.imageLinks.medium);
         if (results.imageLinks.medium === true){
@@ -84,6 +83,15 @@ var newBook = $('#newBook'); //Search button
 
 newBook.click(function(event){
     event.preventDefault();
+    var queryId = searchInput.value;
+    $.getJSON('https://www.googleapis.com/books/v1/volumes', {
+                q: queryId}, handleResponse);
+});
+
+
+/*
+newBook.click(function(event){
+    event.preventDefault();
     // var searchInput = $('#searchInput');
     var queryId = searchInput.value; //text field
     // console.log(typeof queryId);
@@ -93,6 +101,9 @@ newBook.click(function(event){
     // console.log(queryId);
     // console.log(scrInject);
 }); //button press
+*/
+
+
 
 // var addToLibrary = $('.addToLibrary');
 // var addToButton = $('Hello');
