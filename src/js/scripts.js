@@ -55,14 +55,17 @@ function handleResponse(response) {
     for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         var results = item.volumeInfo;
-        var bookStop = "<div class='flipper'><div class='books front' id='book" + i + "'></div><div class='books back' id='book" + i + "'></div></div>";
+        var next = (i + 1);
+        var bookStop = "<div class='flipper'><div class='books front' id='book" + i + "'></div><div class='books back' id='bookB" + i + "'></div></div>";
         $('#searchResults').append(bookStop);
         console.log(results.imageLinks.medium);
         if (results.imageLinks.medium === true){
 
-            $('#book' + [i]).html('<img src="' + results.imageLinks.medium + '"></img>');
+            $('#book' + i).html('<img src="' + results.imageLinks.medium + '"></img>');
+            $('#bookB' + i).html('Hello');
         } else{
-        $('#book' + [i]).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
+        $('#book' + i).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
+        $('#bookB' + i).html(results.title + '<br>By ' + results.authors + '<br>' + results.description);
         }
         // $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<span class="bookContent"><p>Description: ' + results.description + '</p><img src="' + results.imageLinks.thumbnail + '"></img>&nbsp;</span><span class="addToLibrary"><button id="btn' + i + '">Add To Library</button></span>');
    } //end for statement

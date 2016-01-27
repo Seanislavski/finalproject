@@ -26,11 +26,12 @@
 .books{
 	display: flex;
 	flex-flow: column nowrap;
-	overflow: hidden;
+	// overflow: hidden;
 	background: $btnhov;
 	color: black;
 	// align-items: flex-end;
 	margin-bottom: 20px; // space between rows of books
+	align-items: space-between;
 	p{
 		height: 120px; // in order to put the button on the bottom - error when title is 2 lines, bumps
 		flex-grow: 0;
@@ -49,6 +50,7 @@
 			padding-top: 0;
 			justify-content: center;
 		}
+
 }
 
 .searchResults{

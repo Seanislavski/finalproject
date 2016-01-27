@@ -521,10 +521,12 @@ th {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  overflow: hidden;
   background: #205C5A;
   color: black;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  -webkit-align-items: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between; }
   .books p {
     height: 120px;
     -webkit-flex-grow: 0;
@@ -832,8 +834,12 @@ th {
           transform: rotateY(180deg); }
 
 .flip-container, .front, .back {
-  width: 320px;
-  height: 480px; }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
 
 /* flip speed goes here */
 .flipper {
