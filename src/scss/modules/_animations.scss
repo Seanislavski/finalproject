@@ -1,44 +1,99 @@
-/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000;
+// Bouncey Button Hover things
+/* "borrowed" from https://github.com/IanLunn/Hover/blob/master/css/hover.css*/
+
+.hvr-bounce-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  // -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0);
+  // -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  // -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  // -webkit-transition-property: color;
+  transition-property: color;
+  // -webkit-transition-duration: 0.5s;
+  transition-duration: 0.2s;
+  border-radius: 50%;
+
+
 }
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front, .back {
-	// width: 320px;
-	display: flex;
-	flex-flow: row wrap;
-	// height: 480px;
+.hvr-bounce-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $btnhov;
+  // -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  // -webkit-transform-origin: 50% 100%;
+  transform-origin: 20% 0%;//I swapped these #s
+  // -webkit-transition-property: transform;
+  transition-property: transform;
+  // -webkit-transition-duration: 0.5s;
+  transition-duration: 0.4s;
+  // -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  // border-radius: 50%;
 }
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
+.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
+  color: $navtext;
 }
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
+.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {
+  // -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  // -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.27, 0.66);
 }
+// End Bouncy Things
 
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
+// //FLIPPY BOOK THING
+// .flip-container {
+// 	perspective: 1000;
+// }
+// 	/* flip the pane when hovered */
+// 	.flip-container:hover .flipper, .flip-container.hover .flipper {
+// 		transform: rotateY(-180deg);
+// 	}
 
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
-}
+// .flip-container, .front, .back {
+// 	width: 320px;
+// 	// display: flex;
+// 	// flex-flow: row wrap;
+// 	height: 480px;
+// }
+
+// /* flip speed goes here */
+// .flipper {
+// 	transition: 0.6s;
+// 	transform-style: preserve-3d;
+
+// 	position: relative;
+// }
+
+// /* hide back of pane during swap */
+// .front, .back {
+// 	backface-visibility: hidden;
+
+// 	position: absolute; // removing this makes them spread out, but hinge wrong.
+// 	top: 0;
+// 	left: 0;
+// }
+
+// /* front pane, placed above back */
+// .front {
+// 	// z-index: 1;
+// 	/* for firefox 31 */
+// 	transform: rotateY(0deg);
+// }
+
+// /* back, initially hidden pane */
+// .back {
+// 	transform: rotateY(180deg);
+// }
+
+

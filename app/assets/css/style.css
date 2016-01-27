@@ -521,14 +521,15 @@ th {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+  overflow: hidden;
   background: #205C5A;
   color: black;
   margin-bottom: 20px;
-  -webkit-align-items: space-between;
-      -ms-flex-align: space-between;
-          align-items: space-between; }
+  -webkit-align-items: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
+  border-radius: 10px; }
   .books p {
-    height: 120px;
     -webkit-flex-grow: 0;
         -ms-flex-positive: 0;
             flex-grow: 0; }
@@ -542,8 +543,7 @@ th {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    height: 100vh;
-    margin-top: 10px; }
+    margin: .7em; }
   .books a {
     color: white;
     -webkit-align-self: flex-end;
@@ -567,10 +567,7 @@ th {
   .searchResults div {
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
-    padding: 15px;
-    padding-top: 0;
-    border-radius: 5px; }
+    display: flex; }
     .searchResults div h3 {
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -587,12 +584,6 @@ th {
       border-radius: 10px; }
 
 .addToLibrary {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
   color: black; }
   .addToLibrary button {
     border: none; }
@@ -601,6 +592,11 @@ th {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
+
+.area {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .footer {
   -webkit-order: 6;
@@ -615,51 +611,6 @@ th {
   .footer a {
     text-decoration: none;
     color: white; }
-
-/* Bounce To Top */
-/* "borrowed" from https://github.com/IanLunn/Hover/blob/master/css/hover.css*/
-.hvr-bounce-to-top {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  box-shadow: 0 0 15px transparent;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  position: relative;
-  transition-property: color;
-  transition-duration: 0.2s;
-  border-radius: 50%; }
-
-.hvr-bounce-to-top:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #205C5A;
-  -webkit-transform: scaleY(0);
-      -ms-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: 20% 0%;
-      -ms-transform-origin: 20% 0%;
-          transform-origin: 20% 0%;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out; }
-
-.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
-  color: white; }
-
-.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {
-  -webkit-transform: scaleY(1);
-      -ms-transform: scaleY(1);
-          transform: scaleY(1);
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.27, 0.66); }
 
 #search {
   display: -webkit-flex;
@@ -736,10 +687,7 @@ th {
   .searchResults {
     -webkit-flex-flow: column nowrap;
         -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap; }
-  .books {
-    width: 80vw;
-    height: 80vw; } }
+            flex-flow: column nowrap; } }
 
 @media only screen and (min-width: 480px) {
   .nav {
@@ -755,8 +703,8 @@ th {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap; }
   .books {
-    width: 20vw;
-    height: 30vw; } }
+    width: 10vw;
+    height: 15vw; } }
 
 @media only screen and (min-width: 840px) {
   .nav ul li {
@@ -764,7 +712,15 @@ th {
   .header h1 {
     font-size: 50px; }
   body {
-    font-size: 18px; }
+    font-size: 18px; } }
+
+@media only screen and (min-width: 1024px) {
+  .content {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .main {
+    width: 80vw; }
   .sidebar {
     width: 10vw;
     -webkit-flex-direction: column;
@@ -776,13 +732,7 @@ th {
             align-items: center;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
-            justify-content: flex-start; }
-  .content {
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row; }
-  .main {
-    width: 80vw; } }
+            justify-content: flex-start; } }
 
 @media print {
   * {
@@ -823,47 +773,46 @@ th {
   h3 {
     page-break-after: avoid; } }
 
-/* entire container, keeps perspective */
-.flip-container {
-  -webkit-perspective: 1000;
-          perspective: 1000; }
-
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg); }
-
-.flip-container, .front, .back {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
-
-/* flip speed goes here */
-.flipper {
-  transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  position: relative; }
-
-/* hide back of pane during swap */
-.front, .back {
+/* "borrowed" from https://github.com/IanLunn/Hover/blob/master/css/hover.css*/
+.hvr-bounce-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  box-shadow: 0 0 15px transparent;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.2s;
+  border-radius: 50%; }
+
+.hvr-bounce-to-top:before {
+  content: "";
   position: absolute;
+  z-index: -1;
   top: 0;
-  left: 0; }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #205C5A;
+  -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 20% 0%;
+      -ms-transform-origin: 20% 0%;
+          transform-origin: 20% 0%;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out; }
 
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg); }
+.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
+  color: white; }
 
-/* back, initially hidden pane */
-.back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg); }
+.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {
+  -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+          transform: scaleY(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.27, 0.66); }
