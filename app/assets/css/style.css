@@ -525,9 +525,6 @@ th {
   background: #205C5A;
   color: black;
   margin-bottom: 20px;
-  -webkit-align-items: space-around;
-      -ms-flex-align: space-around;
-          align-items: space-around;
   border-radius: 10px; }
   .books p {
     -webkit-flex-grow: 0;
@@ -816,3 +813,43 @@ th {
       -ms-transform: scaleY(1);
           transform: scaleY(1);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.27, 0.66); }
+
+.flip {
+  -webkit-perspective: 800;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  margin: 50px auto; }
+
+.flip .card.flipped {
+  -webkit-transform: rotateY(-180deg); }
+
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s; }
+
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+  font-family: Georgia;
+  font-size: 3em;
+  text-align: center; }
+
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+  background: black;
+  color: white;
+  cursor: pointer; }
+
+.flip .card .back {
+  -webkit-transform: rotateY(-180deg);
+  background: blue;
+  background: white;
+  color: black;
+  cursor: pointer; }

@@ -6,15 +6,15 @@
  * @version 1.0.5
  * Copyright 2016. MIT licensed.
  */
-(function ($, window, document, undefined) {
+// (function ($, window, document, undefined) {
 
-  'use strict';
+//   'use strict';
 
-  $(function () {
-    // FastShell
-  });
+//   $(function () {
+//     // FastShell
+//   });
 
-})(jQuery, window, document);
+// })(jQuery, window, document);
 
 
 
@@ -64,16 +64,16 @@ function handleResponse(response) {
         var item = response.items[i];
         var results = item.volumeInfo;
         var next = (i + 1);
-        var bookStop = "<div class='area'><div class='books' id='book" + i + "'></div></div>";
+        var bookStop = "<div class='flip'><div class='card'><div class='face front' id='book" + i + "'></div><div class='face back' id='bookB" + i + "'></div></div></div>";
         $('#searchResults').append(bookStop);
-        console.log(results.imageLinks.medium);
+        // console.log(results.imageLinks.medium);
         if (results.imageLinks.medium === true){
 
             $('#book' + i).html('<img src="' + results.imageLinks.medium + '"></img>');
             $('#bookB' + i).html('Hello');
         } else{
         $('#book' + i).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
-        $('#bookB' + i).html(results.title + '<br>By ' + results.authors + '<br>' + results.description);
+        $('#bookB' + i).html(results.title + '<br>By ' + results.authors);
         }
         // $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<span class="bookContent"><p>Description: ' + results.description + '</p><img src="' + results.imageLinks.thumbnail + '"></img>&nbsp;</span><span class="addToLibrary"><button id="btn' + i + '">Add To Library</button></span>');
    } //end for statement
@@ -92,7 +92,16 @@ newBook.click(function(event){
                 maxResults: 40}, handleResponse);
 
 });
+var flipIt = function(){
+    $(this).find('.card').addClass('flipped').mouseleave(function(){
+        $(this).removeClass('flipped');
+    }
+)};
+$('.flip').click(
+    console.log('yep'));
+    // flipIt();
 
+    // return false;
 
 /*
 newBook.click(function(event){
