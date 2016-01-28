@@ -56,17 +56,17 @@ function handleResponse(response) {
         var item = response.items[i];
         var results = item.volumeInfo;
         var next = (i + 1);
-        var bookStop = "<div class='flip'><div class='card'><div class='face front' id='book" + i + "'></div><div class='face back' id='bookB" + i + "'></div></div></div>";
+        var bookStop = "<div class='flip'><div class='card'><div class='face front' id='book" + i + "'></div><div class='back' id='bookB" + i + "'></div></div></div>";
         $('#searchResults').append(bookStop);
         // console.log(results.imageLinks.medium);
-        if (results.imageLinks.medium === true){
+        // if (results.imageLinks.medium === true){
 
-            $('#book' + i).html('<img src="' + results.imageLinks.medium + '"></img>');
-            $('#bookB' + i).html('Hello');
-        } else{
+        //     $('#book' + i).html('<img src="' + results.imageLinks.medium + '"></img>');
+        //     $('#bookB' + i).html('Hello');
+        // } else{
         $('#book' + i).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
         $('#bookB' + i).html(results.title + '<br>By ' + results.authors);
-        }
+        // }
         // $('#book' + [i]).html('<h3>' + results.title + '</h3><br>by ' + results.authors + '<span class="bookContent"><p>Description: ' + results.description + '</p><img src="' + results.imageLinks.thumbnail + '"></img>&nbsp;</span><span class="addToLibrary"><button id="btn' + i + '">Add To Library</button></span>');
    } //end for statement
 }  //query API and put in #main
@@ -74,26 +74,20 @@ function handleResponse(response) {
 //
 var newBook = $('#newBook'); //Search button
 
-// var searchForm = $('search'); //Search form
-
 newBook.click(function(event){
     event.preventDefault();
     var queryId = searchInput.value;
     $.getJSON('https://www.googleapis.com/books/v1/volumes', {
                 q: queryId,
                 maxResults: 40}, handleResponse);
-
 });
-var flipIt = function(){
-    $(this).find('.card').addClass('flipped').mouseleave(function(){
-        $(this).removeClass('flipped');
-    }
-)};
-$('.flip').click(
-    console.log('yep'));
-    // flipIt();
 
-    // return false;
+$('.flip').click(function(){
+        $(this).find('.card').addClass('flipped').mouseleave(function(){
+            $(this).removeClass('flipped');
+        });
+        return false;
+    });
 
 /*
 newBook.click(function(event){

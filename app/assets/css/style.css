@@ -494,7 +494,6 @@ th {
       -ms-flex-order: 2;
           order: 2;
   width: 100vw;
-  margin: 1px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   background: rgba(0, 0, 0, 0.7);
@@ -838,7 +837,8 @@ th {
   z-index: 2;
   font-family: Georgia;
   font-size: 3em;
-  text-align: center; }
+  text-align: center;
+  line-height: 200px; }
 
 .flip .card .front {
   position: absolute;
