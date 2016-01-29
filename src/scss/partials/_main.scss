@@ -31,8 +31,10 @@
 	overflow: hidden; //*
 	background: $btnhov;
 	color: black;
+	height: 240px;
+	width: 160px;
 	// align-items: flex-end;
-	margin-bottom: 20px; // space between rows of books
+	// margin-bottom: 20px; // space between rows of books
 	// flex-basis: 23%;
 	// align-items: space-around; //*
 	border-radius: 10px;
@@ -103,5 +105,36 @@
 
 .area{
 	flex-direction: column;
+
+}
+
+
+.title2{
+	padding: 0;
+	margin: 0;
+	border-radius: $headBordRad;
+	background: rgba(0, 0, 0, .7);
+	color: $maintext;
+	display: flex;
+	flex-direction: row nowrap;
+	justify-content: center;
+	text-align: center;
+}
+.by{
+	flex-grow: 2;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 134px;
+	align-items: flex-start;
+}
+.add{
+	text-align: center;
+	background: rgba(0, 0, 0, .7);
+	color: white;
+	border-radius: $headBordRad;
+}
+.add:hover{
+	background: rgba(5, 5, 5, .9);
+	color: #BFBFBF;
 
 }
