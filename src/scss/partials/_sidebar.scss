@@ -1,9 +1,9 @@
 .sidebar {
 	order: 1;
-	width: 10vw;
+	// width: 10vw;
 	margin: 0 5px 10px 15px;
 	display: flex;
-
+	flex-flow: column nowrap;
 		//actions
 	form{
 		
@@ -23,5 +23,8 @@
 				color: white;
 			}
 		}
+	}
+	.readingList{
+
 	}
 }

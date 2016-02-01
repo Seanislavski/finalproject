@@ -3,9 +3,22 @@
 <section class="header">
 	<h2>My Library</h2>
 </section>
+
 	<p>
 	Select a book below.</p>
 	<div id="myLibrary"></div>
 
 
 </section>
+
+<script>
+
+for(var i = 0; i < libraryArray.length; i++){
+ $.getJSON('https://www.googleapis.com/books/v1/volumes', {
+                q: libraryArray[i],
+                maxResults: 1}, 
+                	libraryBooks);
+}
+</script>
+
+

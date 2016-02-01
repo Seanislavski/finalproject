@@ -47,6 +47,19 @@ gulp.task('js',function(){
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
+// gulp.task('js',function(){
+//   gulp.src('src/js/myLibrary.js')
+//     .pipe(jshint('.jshintrc'))
+//     .pipe(jshint.reporter('default'))
+//     .pipe(header(banner, { package : package }))
+//     .pipe(gulp.dest('app/assets/js'))
+//     // .pipe(uglify())
+//     .pipe(header(banner, { package : package }))
+//     .pipe(rename({ suffix: '.min' }))
+//     .pipe(gulp.dest('app/assets/js'))
+//     .pipe(browserSync.reload({stream:true, once: true}));
+// });
+
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
         server: {
