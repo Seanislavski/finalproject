@@ -6,7 +6,7 @@
 	flex-flow: column nowrap;
 		//actions
 	form{
-		
+
 	}
 
 	ul{
@@ -33,7 +33,10 @@
 			flex-flow: column nowrap;
 			text-align: center;
 			padding-left: 0;
-
+			li{
+				display: flex;
+				padding-left: 10px;
+			}
 			li:nth-child(even) {
 				background: #444444;
 			}
@@ -48,4 +51,8 @@
       fill: $navtext;
     }
   }
+}
+#spacer{
+	display: flex;
+	flex-grow: 2;
 }

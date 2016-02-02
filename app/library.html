@@ -5,7 +5,7 @@
 </section>
 
 	<p>
-	Select a book below.</p>
+	<!-- Select a book below.</p> -->
 	<div id="myLibrary"></div>
 
 
@@ -16,7 +16,7 @@
 for(var i = 0; i < libraryArray.length; i++){
  $.getJSON('https://www.googleapis.com/books/v1/volumes', {
                 q: libraryArray[i],
-                maxResults: 1}, 
+                maxResults: 1},
                 	libraryBooks);
 }
 </script>

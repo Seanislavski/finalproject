@@ -9,24 +9,24 @@
 	background: $blackBack;
 	// box-shadow: -20px -10px rgba(10, 10, 10, .7); //#6E6E6E;
 	color: $maintext;
-	p{
+	p {
 		text-align: center;
 	}
 }
 
-.content{
+.content {
 	flex: 1;
 	padding: 0;
 	margin: 1px;
 }
 
-.new{
+.new {
 	flex-direction: column;
 	margin: 0;
 	padding: 0;
 }
 
-.books{
+.books {
 	display: flex;
 	flex-flow: column nowrap;
 	overflow: hidden; //*
@@ -40,13 +40,15 @@
 	// flex-basis: 23%;
 	// align-items: space-around; //*
 	border-radius: 10px;
-	p{
+	p {
 		// height: 120px; // in order to put the button on the bottom - error when title is 2 lines, bumps
-		flex-grow: 0;
+		// flex-grow: 0;
+		display: flex;
+		justify-content: flex-start;
 
 
 	}
-	img{
+	img {
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
@@ -55,26 +57,24 @@
 		margin: .7em;  //the margin around the photos
 		// max-height: 100px;
 	}
-	a{
+	a {
 			color: white;
 			align-self: flex-end;
 			padding-top: 0;
 			justify-content: center;
 		}
-
+	border: 5px groove $bookBord;
 }
 
-.searchResults{
+.searchResults {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around; 
+	justify-content: space-around;
 
-	div{ //book
+	div { //book
 		display: flex;
-		// padding: 15px;
-		// padding-top: 0;
-		// border-radius: 5px;
-		h3{ //title
+
+		h3 { //title
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
@@ -91,7 +91,7 @@
 	// }
 }
 
-.addToLibrary{ //button area
+.addToLibrary { //button area
 	// display: flex;
 	// height: 20px;
 	// position: fixed;
@@ -102,90 +102,101 @@
 	}
 }
 
-.bookContent{
+
+.bookContent {
 	justify-content: space-around;
 }
 
-.area{
+.area {
 	flex-direction: column;
 
 }
 
-.title2{
-	padding: 0;
+.title2 {
+	padding: .5em;
 	margin: 0;
 	border-radius: $headBordRad;
-	background: rgba(0, 0, 0, .7);
-	color: $maintext;
+	background: $bookBack;
+	color: black;
+	border: 10px double $bookBord;
 	display: flex;
 	flex-direction: row nowrap;
-	justify-content: center;
+	// justify-content: flex-start;
+	// flex-grow: 0;
 	text-align: center;
 }
 
-.by{
+.by {
 	flex-grow: 2;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	// height: 134px;
 	align-items: flex-start;
 	margin-top: 0;
+	font-size: 15px;
 }
 
-.add{
+.add {
 	text-align: center;
-	background: rgba(0, 0, 0, .7);
-	color: white;
+	background: $bookBack; //rgba(0, 0, 0, .7);
+	color: black;//white;
 	border-radius: $headBordRad;
+	border: 2px solid $bookBord;
 }
 
-.add:hover{
+.add:hover {
 	background: rgba(5, 5, 5, .9);
 	color: #BFBFBF;
+	cursor: pointer;
 }
 
-.hiddenIsbn{
+.hiddenIsbn {
 	display: none;
 }
 
-.bookCover{
-	// height: 10vh;
-	display: flex;
-	align-self: center;
-	padding: 50px;
-	border: 8px double #BC834B;
-	border-radius: 50%;
-	background: #FFF7D5;
-	
-
-}
-.book{
+.book {
 	display: flex;
 	flex-flow: row nowrap;
-	flex-grow: 0;
+	// flex-grow: 0;
+	justify-content: space-around;
+	align-content: center;
 	// margin: 20px;
 	// background: url('../img/photo-1431608660976-4fe5bcc2112c.jpg') no-repeat;
 	background-size: cover;
 	// height: 100vh;
 	width: 86vw;
-	* + *{
+	* + * {
 		margin-top: 1em;
 	}
 }
-.contents{
+
+.bookCover {
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	padding: 50px;
+	border: 8px double $bookBord;
+	border-radius: 50%;
+	background: $bookBack;
+	margin-left: 20px;
+
+}
+.contents {
 	display: flex;
 	flex-flow: column nowrap;
 	padding: 3em 1em 3em 1em;
 	justify-content: space-around;
-	
+	align-items: center;
+	width: 80vw;
+
 
 }
 
-.notThis{
+.notThis {
 	color: red;
 }
 
-#title3{
+#title3 {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -197,20 +208,32 @@
 	padding: 10px;
 	border: 10px double #BC834B;
 	border-radius: 15px;
+	text-shadow: 2px 2px 2px #909090;
 }
 
-.desc{
+.desc {
 	color: black;
 	background: #FFF7D5;
 	padding: 2em;
 	border: 5px groove #BC834B;
+	width: 50vw;
 }
 
-#author3{
+#author3 {
 	font-size: 20px;
+	text-shadow: none;
 }
 
-.card{
+.card {
 	// background: blue;
-	
+
+}
+
+#info {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.listedBook {
+	margin-right: .5em;
 }
