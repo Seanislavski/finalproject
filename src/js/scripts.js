@@ -59,13 +59,10 @@ function addToList(){
     // if()
     readList.append('<li><a onclick="notMe()" class="notThis">x</a> &nbsp;<span class="listedBook">' + bookToList.html() + '</span><br>'); //add to List
     libraryArray.push(isbnToList.html());
-    var evOth = $('#listOfBooks:nth-child(odd)'); //every other listed book
-    evOth.css('background', '#444444'); //now has a grey bg
 }
 
 var x = $('.notThis');
 // x.
-
 
 function flipIt(){
     $('.flip').click(function(){
@@ -78,7 +75,7 @@ function flipIt(){
 }
 
 var numBooks;
-var books = $('.books');
+// var books = $('.books');
 
 function handleResponse(response) {
     $('#searchResults').html(''); //clear area
@@ -86,7 +83,14 @@ function handleResponse(response) {
     for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         var results = item.volumeInfo;
-        var next = (i + 1);
+        // var next = (i + 1);
+        var auths = [];
+        if (results.authors.length > 1){
+            for (var t = 0; t < results.authors.length; t++){
+                auths.push(results.authors[t]);
+            }
+            var authsAsString = auths.join(', ');
+        } else {var authsAsString = results.authors[0]}
         var bookStop = "<div class='flip'><div class='card'><div class='books face front' id='book" + i + "'></div><div class='books back' id='bookB" + i + "'></div></div></div>";
         if (results.industryIdentifiers){
             var hiddenIsbn = results.industryIdentifiers[0]['identifier'];
@@ -95,10 +99,11 @@ function handleResponse(response) {
         }
         $('#searchResults').append(bookStop);
 
-            if(results.imageLinks){
-                $('#book' + i).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
-            }
-        $('#bookB' + i).html("<span class='title2'>" + results.title + '</span><span class="by"><br>By ' + results.authors + "</span><span class='hiddenIsbn'>" + hiddenIsbn + "</span><span class='add'>Add</span>");
+        if(results.imageLinks){
+            $('#book' + i).html('<img src="' + results.imageLinks.thumbnail + '"></img>');
+        }
+
+        $('#bookB' + i).html("<span class='title2'>" + results.title + '</span><span class="by"><br>By ' + authsAsString + "</span><span class='hiddenIsbn'>" + hiddenIsbn + "</span><span class='add'>Add</span>");
 
    } //end for statement
 
@@ -121,6 +126,7 @@ newBook.click(function(event){
 
 function libraryBooks(response){
     var myLibrary = $('#myLibrary');
+    var bookArea = $('.book');
     if (response.items){
         var item = response.items[0];    
     } else{
@@ -128,7 +134,19 @@ function libraryBooks(response){
     }
     
     var results = item.volumeInfo;
-    myLibrary.append('<div class="book"><div class="bookCover"><img src="' + results.imageLinks.thumbnail + '"></img></div><div class="contents">' + results.title + '<br> By: ' + results.authors + '<br>' + results.description + '</div></div>' );
+    var auths = [];
+    if (results.authors.length > 1){
+        for (var i = 0; i < results.authors.length; i++){
+        auths.push(results.authors[i]);
+        }
+        var authsAsString = auths.join(', ');
+    } else{ var authsAsString = results.authors[0]}
+    myLibrary.append('<div class="book"><div class="bookCover"><img src="' + results.imageLinks.thumbnail + '"></img></div><div class="contents"><span id="title3">' + results.title + '<br><span id="author3"> By: ' + authsAsString + '</span></span><br><span class="desc">' + results.description + '</span></div></div>' );
+
+    var bookClick = function(){
+        console.log(myLibrary.length);
+    }
+    bookArea.click();
 }
 
 
@@ -156,43 +174,4 @@ newBook.click(function(event){
 // addIfClicked.click(function(event){
 //     event.preventDefault();
 // });
-
-
-
-/*
-    Vertigo.js
-    Simple vertical and horizontal parallax with no jQuery or Stellar.js
-    Ed Aponte 11.04.2015
-
-*/
-
-
-var parallaxY = document.getElementsByClassName("parallaxY"); // get an array of all elements with class parallaxY
-var speedY = []; // declare a speedY array that will be used to store data-speeds for each class parallaxY
-
-var parallaxX = document.getElementsByClassName("parallaxX"); // get an array of all elements with class parallaxX
-var speedX = []; // declare a speedX array that will be used to store data-speeds for each class parallaxX
-
-
-window.onscroll = function() { // window.onscroll will perform the below code whenever you scroll
-
-    // Loop thru all classes parallaxY, get their corresponding data-speed value and apply the vertical offset to the background
-    for ( var y = 0 ; y < parallaxY.length ; y++) {
-
-        speedY[y] = parallaxY[y].getAttribute("data-speed");
-        var yOffset = window.pageYOffset;
-        parallaxY[y].style.backgroundPosition = "0px " + (yOffset / speedY[y]) + "px";
-
-    }
-
-    // Loop thru all classes parallaxX, get their corresponding data-speed value and apply the horizontal offset to the background
-    for ( var x = 0 ; x < parallaxX.length ; x++) {
-
-        speedX[x] = parallaxX[x].getAttribute("data-speed");
-        var xOffset = window.pageXOffset;
-        parallaxX[x].style.backgroundPosition = (xOffset / speedX[x]) + "px" + " 0px";
-
-    }
-
-};
 

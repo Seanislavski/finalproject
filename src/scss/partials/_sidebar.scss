@@ -10,21 +10,42 @@
 	}
 
 	ul{
-		
+		display: flex;
 		li{
 			list-style: none;
+
 			// line-height: 16px;
 			a{
 				// color: green;
 				text-decoration: none;
 			}
 			a:hover{
-				background: grey;
-				color: white;
+				// background: grey;
+				color: orange;
+				cursor: pointer;
 			}
 		}
 	}
 	.readingList{
+		// background: hotpink;
+		ul{
+			display: flex;
+			flex-flow: column nowrap;
+			text-align: center;
+			padding-left: 0;
 
+			li:nth-child(even) {
+				background: #444444;
+			}
+			li:nth-child(odd){
+				background: #333333;
+			}
+		}
 	}
+	svg{
+    height: 12px;
+    path{
+      fill: $navtext;
+    }
+  }
 }

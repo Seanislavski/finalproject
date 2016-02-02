@@ -68,9 +68,12 @@
 
     <main class="main" role="main">
       <section class="header">
-        <h2>Organize those things!</h2>
+        <!-- <h2>Organize those things!</h2> -->
       </section>
-      <p>Bookshelves are tricky to keep organized, so this is a tool where you can put your books on the virtual shelf, organize them, enter information about them, and mark if you are reading a book or have lent it to someone. </p>
+      <p>
+      To find a book, enter a search term and click "search". If the correct result does not display, please try a different, or more specific term.
+      </p>
+      <!-- <p>Bookshelves are tricky to keep organized, so this is a tool where you can put your books on the virtual shelf, organize them, enter information about them, and mark if you are reading a book or have lent it to someone. </p> -->
       <section class="header" id="searchHead">
         <h2>Search Results</h2>
       </section>
@@ -87,7 +90,9 @@
       <form id="search">
         <input type="text" size="13" id="searchInput">
         <br>
-        <button type="submit" id="newBook">Search</button>
+        <button type="submit" id="newBook">
+          <svg-icon><src href="assets/components/glyph-iconset-master/svg/si-glyph-magnifier.svg"/></src></svg-icon>
+        Search</button>
       </form>
 
     

@@ -9,6 +9,9 @@
 	background: $blackBack;
 	// box-shadow: -20px -10px rgba(10, 10, 10, .7); //#6E6E6E;
 	color: $maintext;
+	p{
+		text-align: center;
+	}
 }
 
 .content{
@@ -64,7 +67,7 @@
 .searchResults{
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-around; 
 
 	div{ //book
 		display: flex;
@@ -81,6 +84,7 @@
 			border-radius: 10px;
 			// -webkit-margin-after: 0;
 		}
+
 	}
 	// button{
 	// 	bottom: 0;
@@ -145,20 +149,35 @@
 }
 
 .bookCover{
-	// height: 50vh;
-	// width: 100vw;
-	// flex-flow: row nowrap;
+	// height: 10vh;
+	display: flex;
+	align-self: center;
+	padding: 50px;
+	border: 8px double #BC834B;
+	border-radius: 50%;
+	background: #FFF7D5;
+	
 
 }
 .book{
 	display: flex;
 	flex-flow: row nowrap;
 	flex-grow: 0;
-	margin: 20px;
+	// margin: 20px;
+	// background: url('../img/photo-1431608660976-4fe5bcc2112c.jpg') no-repeat;
+	background-size: cover;
+	// height: 100vh;
+	width: 86vw;
+	* + *{
+		margin-top: 1em;
+	}
 }
 .contents{
+	display: flex;
 	flex-flow: column nowrap;
-	padding-left: 10px;
+	padding: 3em 1em 3em 1em;
+	justify-content: space-around;
+	
 
 }
 
@@ -166,3 +185,32 @@
 	color: red;
 }
 
+#title3{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	text-align: center;
+	width: 50vw;
+	font: 300 30px/1.6 'Goudy Bookletter 1911', Helvetica, 'Times New Roman';
+	background: #FFF7D5;
+	color: black;
+	padding: 10px;
+	border: 10px double #BC834B;
+	border-radius: 15px;
+}
+
+.desc{
+	color: black;
+	background: #FFF7D5;
+	padding: 2em;
+	border: 5px groove #BC834B;
+}
+
+#author3{
+	font-size: 20px;
+}
+
+.card{
+	// background: blue;
+	
+}
