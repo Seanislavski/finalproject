@@ -664,10 +664,11 @@ th {
           flex-grow: 2;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-              -ms-grid-row-align: flex-start;
-          align-items: flex-start;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  text-align: center;
   margin-top: 0;
   font-size: 15px; }
 
