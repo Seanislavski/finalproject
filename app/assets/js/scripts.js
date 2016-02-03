@@ -151,12 +151,12 @@ function libraryBooks(response){
         var authsAsString = auths.join(', ');
     } else{ var authsAsString = results.authors[0]}
 
-    myLibrary.append('<div class="book"><span class="leftside"><div class="bookCover"><img src="' + results.imageLinks.thumbnail + '"></img></div><span id="info"><span class="isbn">ISBN: ' + results.industryIdentifiers[0].identifier + '</span></span></span><div class="contents"><span id="title3">' + results.title + '<br><span id="author3"> By: ' + authsAsString + '</span></span><br><span class="desc">' + results.description + '</span></div></div>' );
+    myLibrary.append('<div class="book"><span class="leftside"><div class="bookCover"><img src="' + results.imageLinks.thumbnail + '"></img></div><span id="info"><span class="isbn">ISBN: ' + results.industryIdentifiers[0].identifier + '<br>Publisher: ' + results.publisher + '<br> Published: ' + results.publishedDate + '<br>Average Rating: ' + results.averageRating + '</span></span></span><div class="contents"><span id="title3">' + results.title + '<br><span id="author3"> By: ' + authsAsString + '</span></span><br><span class="desc">' + results.description + '</span></div></div>' );
 
-    var bookClick = function(){
-        console.log(myLibrary.length);
-    }
-    bookArea.click();
+    // var bookClick = function(){
+    //     console.log(myLibrary.length);
+    // }
+    // bookArea.click();
 }//end libraryBooks function
 
 

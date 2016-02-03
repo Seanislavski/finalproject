@@ -653,7 +653,10 @@ th {
   -webkit-flex-direction: row nowrap;
       -ms-flex-direction: row nowrap;
           flex-direction: row nowrap;
-  text-align: center; }
+  text-align: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .by {
   -webkit-flex-grow: 2;
@@ -724,7 +727,7 @@ th {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  padding: 3em 1em 3em 1em;
+  padding: 0em 1em 3em 1em;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;

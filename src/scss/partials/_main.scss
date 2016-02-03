@@ -124,6 +124,7 @@
 	// justify-content: flex-start;
 	// flex-grow: 0;
 	text-align: center;
+	justify-content: center;
 }
 
 .by {
@@ -184,7 +185,7 @@
 .contents {
 	display: flex;
 	flex-flow: column nowrap;
-	padding: 3em 1em 3em 1em;
+	padding: 0em 1em 3em 1em;
 	justify-content: space-around;
 	align-items: center;
 	width: 80vw;
