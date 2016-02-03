@@ -234,7 +234,8 @@
 
 #info {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
+	padding-left: 2em;
 }
 
 .listedBook {
